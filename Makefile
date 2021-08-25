@@ -23,7 +23,7 @@ export STAT_LIB_DIR = $(ROOT_DIR)/stat_lib
 export SHER_LIB_DIR = $(ROOT_DIR)/sher_lib
 export APP_DIR = $(ROOT_DIR)/app
 
-all: stat_lib sher_lib app
+all: stat_lib sher_lib sher_lib_install app
 
 clean: stat_lib_clean sher_lib_clean app_clean
 
@@ -50,6 +50,12 @@ sher_lib_clean:
 	@echo     Cleaning Shared Library
 	@echo =================================
 	$(MAKE) -C $(SHER_LIB_DIR) clean
+
+sher_lib_install:
+	@echo =================================
+	@echo    Installing Shared Library
+	@echo =================================
+	$(MAKE) -C $(SHER_LIB_DIR) install
 
 app:
 	@echo =================================

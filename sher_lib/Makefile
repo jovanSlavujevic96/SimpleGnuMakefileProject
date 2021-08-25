@@ -16,3 +16,6 @@ all: $(TARGET)
 
 clean: 
 	$(RMDIR) $(TARGET) $(OBJECTS)
+
+install:
+	$(CP) $(TARGET) "/usr/lib/"
